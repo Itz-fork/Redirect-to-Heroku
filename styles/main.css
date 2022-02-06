@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+:root {
+    --input-color: #021942be;
+}
+
+body {
+    background-color: #b7dfe9;
+}
+
+.avatar {
+    width: calc(250 * 1.6px);
+    position: fixed;
+    bottom: 0px;
+    right: calc(-10 * 10px);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.heroku-box {
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+    /* width: 25rem; */
+    margin: 100px auto;
+    background: #eef3f5;
+    border-radius: 5px;
+}
+
+h1 {
+    color: #2f455c;
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.input-field {
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid var(--input-color);
+    margin: 4rem auto 2.5rem;
+    }
+
+    .input-field::after {
+    content: "";
+    position: relative;
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: var(--input-color);
+    transform: scaleX(0);
+    transform-origin: 0%;
+    transition: transform 600ms ease-in-out;
+    top: 2px;
+    }
+
+    .input-field:focus-within {
+        border-color: transparent;
+    }
+
+    .input-field:focus-within::after {
+        transform: scaleX(1);
+    }
+
+
+.deploy-button {
+    margin-top: 1rem;
+    z-index: 1;
+    font-size: 1.2rem;
+    font-weight: 200 bold;
+    letter-spacing: 1px;
+    padding: 10px 40px 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    }
+  
+  .deploy-button::after {
+    content: "";
+    background-color: #92eedf;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.4s;
+    }
+  
+  .deploy-button:hover::after {
+    top: 0px;
+    left: 0px;
+    }
+
+
+.input {
+    outline: none;
+    border: none;
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+    background: none;
+    font-weight: bold;
+    padding: 0.25rem 0;
+    font-size: 1rem;
+    color: #2E3440;
+    }
+    .input:invalid {
+    color: #F08080;
+    }
+
+
+/* For responsive layout */
+@media (min-width: 700px) {
+    .heroku-box {
+        width: 30rem;
+    }
+
+    .avatar {
+    width: calc(250 * 2.5px);
+    }
+}
+
+@media (max-width: 400px) {
+    .avatar {
+    width: calc(250 * 1.4px);
+    }
+}
+
+@media (max-width: 360px) {
+    .avatar {
+    display: none;
+    }
+}

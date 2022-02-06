@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Heroku Deployer by @Itz-fork</title>
+</head>
+
+<body>
+
+    <!-- Anime avatar -->
+    <img src="img/avatar.png" alt="Avatar" class="avatar">
+
+    <!-- Main box -->
+    <div class="heroku-box">
+        <h1>Redirect to Heroku</h1>
+
+        <!-- Fork button -->
+        <p align="center"><span id="fork"></span></p>
+
+        <!-- Input field -->
+        <div class="input-field">
+            <input type="url" id="repo-link" class="input" placeholder="Your Forked Repo Link" required>
+        </div>
+
+        <!-- Deploy button -->
+        <p align="center">
+            <button type="button" class="deploy-button" onclick="redirectToHeroku()">Deploy Now!</button>
+        </p>
+    </div>
+
+</body>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script defer src="app.js"></script>
+
+</html>
