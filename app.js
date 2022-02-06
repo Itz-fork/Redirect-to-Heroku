@@ -2,6 +2,7 @@
 function validateSrc() {
     if (!unr) {
         unr = "Itz-fork";
+        return
     }
     let spl = unr.split("/");
     if (spl.length < 2 || spl[1] == "") {
