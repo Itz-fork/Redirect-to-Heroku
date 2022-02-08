@@ -24,16 +24,16 @@ function setupForkButton() {
 function redirectToHeroku() {
     let input = document.getElementById("repo-link").value;
     if (!input || input == "") {
-        return throwError(true, "Please enter your forked repo link!");
+        return throwError("Please enter your forked repo link!");
     }
 
     if (input.includes(unr)) {
-        return throwError(true, "You are trying to deploy the original repo which was banned from heroku. Please enter your forked repo link or kindly fuck off!");
+        return throwError("You are trying to deploy the original repo which was banned from heroku. Please enter your forked repo link or kindly fuck off!");
     }
 
-    const regex = /https?:\/\/github\.com\/(?:[^\/\s]+\/)+/g;
+    const regex = /https?:\/\/github\.com\/(?:[^\/\s]+\/)+/g
     if (!regex.test(input)) {
-        return throwError(true, "Please enter a github repo url!");
+        return throwError("Please enter a github repo url!");
     }
 
     window.open(`https://heroku.com/deploy?template=${input}`, "_blank");
